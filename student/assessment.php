@@ -581,20 +581,20 @@ if (sizeof($queslist) > 0)//$result->num_rows > 0)
         $typ= $queslist[$x]['ques_type'];
         if($typ=="E"|| $typ== "EI")
         {
-            $ques_style="radial-gradient(circle, #e5ff9b, #c9ff93, #a6ff8f, #77ff92, #00ff9b)";//#98FB98
+            $ques_style="radial-gradient(circle, #ffffff, #dbfaff, #75ffff, #00fffa, #00ff9b)";//#98FB98
             $total_marks += 1;
 
         }
           
         else if($typ=="M"|| $typ== "MI")
         {
-            $ques_style="radial-gradient(circle, #fbff9b, #fcff82, #fdff66, #feff45, #ffff00)";
+            $ques_style="radial-gradient(circle, #ffffff, #ffefff, #ffd8dd, #ffdc7d, #ffff00)";
             $total_marks += 2;
         }
            
          else
          {
-            $ques_style="radial-gradient(circle, #ffc100, #ff9a00, #ff7400, #ff4d00, #f15d0d)";
+            $ques_style="radial-gradient(circle, #ffffff, #fad5fc, #ffa0d2, #ff6781, #ff4500)";
             $total_marks+=3;
          }
 
