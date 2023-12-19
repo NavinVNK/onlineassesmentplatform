@@ -684,13 +684,14 @@ for (var i = 0; i < galleryImages.length; i++) {
     galleryImages[i].addEventListener('click', function() {
         // Get the source of the clicked image
         var imageUrl = this.src;
-
-        openPopup(imageUrl ); 
+         openPopup(imageUrl ); 
     });
 }
 
 function openPopup(imagePath) {
+    
 const popupWindow = window.open('', '_blank', 'width=600,height=600');
+
 popupWindow.document.write(`
      <img src="${imagePath}" alt="Enlarged Image" style="max-width: 100%; max-height: 100%; height: auto; width: auto;">
 `);
@@ -744,6 +745,7 @@ else
    return false ;
 }
 $(document).ready(function() {
+
 $('#submitButton').click(function() {
                 // Add your code to execute when the submit button is clicked
                 $(window).off('blur');
@@ -756,10 +758,6 @@ $('#submitButton').click(function() {
                 // Page is refreshed, submit the form
                 var id='4';
             var deptVal='mal1';
-           
-            
-            //alert("You moved out of sssesment window,Your Assesment is cancelled");
-           // $("#quiz_form").submit(); 
 
             // Use AJAX to fetch subcategories based on the selected category
             $.ajax({
@@ -774,37 +772,33 @@ $('#submitButton').click(function() {
                 }
             });
             }
-
             
+            $(document).on('focus', '.popup-window', function() {
+                isPopupFocused = true;
+                console.log('Popup window is focused');
+            });            
         
-$(window).blur(function(e) {
-    //alert("You will be logged out since you moved of Mindow");
-   // alert("You moved out of sssesment window,Your Assesment is cancelled");  
+/*$(window).blur(function(e) {
+
             var id='4';
             var deptVal='mal2';
-           
-            
-            //alert("You moved out of sssesment window,Your Assesment is cancelled");
-           // $("#quiz_form").submit(); 
-
-            // Use AJAX to fetch subcategories based on the selected category
-            $.ajax({
-                type: "GET",
-                url: "../admin/selectajax.php",
-                data: { select_value: deptVal,id:id },
-                success: function(response) {
-                   // alert(response);
-                    $("#quiz_form").append(response);
-                    $("#quiz_form").submit(); 
-
-                }
-            });
-                                
-            
        
-    
-    //setTimeout('document.quiz.submit()',1);
-}); 
+                            $.ajax({
+                            type: "GET",
+                            url: "../admin/selectajax.php",
+                            data: { select_value: deptVal,id:id },
+                            success: function(response) {
+                            // alert(response);
+                                $("#quiz_form").append(response);
+                                $("#quiz_form").submit(); 
+
+                            }
+            });
+                    
+                
+
+
+}); */
 $(document).ready(function(){
 
   
