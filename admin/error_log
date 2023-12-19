@@ -1,0 +1,17 @@
+[06-Feb-2023 09:02:18 UTC] PHP Warning:  include(mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 3
+[06-Feb-2023 09:02:18 UTC] PHP Warning:  include(mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 3
+[06-Feb-2023 09:02:18 UTC] PHP Warning:  include(): Failed opening 'mail/PHPMailerAutoload.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 3
+[06-Feb-2023 09:02:18 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 5
+[06-Feb-2023 09:02:43 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[06-Feb-2023 09:02:43 UTC] PHP Notice:  Undefined variable: row in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 21
+[06-Feb-2023 09:02:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 21
+[06-Feb-2023 09:02:43 UTC] PHP Notice:  Undefined variable: row in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 21
+[06-Feb-2023 09:02:43 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/b0odpdjwyozt/public_html/nayaudyogh.com/admin/send-email.php on line 21
+[28-Mar-2023 10:11:58 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[04-May-2023 06:30:09 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[04-May-2023 07:05:14 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[03-Aug-2023 07:19:00 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[11-Aug-2023 09:43:59 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45

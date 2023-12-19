@@ -1,0 +1,249 @@
+[02-Feb-2023 07:28:20 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:28:20 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:28:20 UTC] PHP Fatal error:  require(): Failed opening required '../mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:31:12 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:31:12 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:31:12 UTC] PHP Fatal error:  require(): Failed opening required '../mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:34:06 UTC] PHP Warning:  include(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:34:06 UTC] PHP Warning:  include(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:34:06 UTC] PHP Warning:  include(): Failed opening '../mail/PHPMailerAutoload.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 3
+[02-Feb-2023 07:34:06 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 5
+[02-Feb-2023 07:36:49 UTC] PHP Warning:  include(home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 4
+[02-Feb-2023 07:36:49 UTC] PHP Warning:  include(home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 4
+[02-Feb-2023 07:36:49 UTC] PHP Warning:  include(): Failed opening 'home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 4
+[02-Feb-2023 07:36:49 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 6
+[02-Feb-2023 07:37:12 UTC] PHP Warning:  include(home/b0odpdjwyozt/public_html/nayaudyogh/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 4
+[02-Feb-2023 07:37:12 UTC] PHP Warning:  include(home/b0odpdjwyozt/public_html/nayaudyogh/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 4
+[02-Feb-2023 07:37:12 UTC] PHP Warning:  include(): Failed opening 'home/b0odpdjwyozt/public_html/nayaudyogh/mail/PHPMailerAutoload.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 4
+[02-Feb-2023 07:37:12 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 6
+[02-Feb-2023 07:38:21 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[07-Feb-2023 08:04:49 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[07-Feb-2023 08:39:43 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[07-Feb-2023 17:20:24 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[08-Feb-2023 07:23:14 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[08-Feb-2023 08:55:02 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[08-Feb-2023 09:56:31 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[08-Feb-2023 10:05:28 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[08-Feb-2023 10:13:47 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 6
+[08-Feb-2023 10:14:23 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 9
+[08-Feb-2023 10:14:26 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/testmail.php on line 9
+[08-Feb-2023 11:11:30 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[08-Feb-2023 11:11:30 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:22:53 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[09-Feb-2023 07:22:53 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:28:23 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:29:11 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:29:13 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:29:15 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:29:16 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 07:29:17 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 11:05:02 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[09-Feb-2023 11:05:02 UTC] PHP Warning:  stream_socket_enable_crypto(): Peer certificate CN=`*.prod.sin2.secureserver.net' did not match expected CN=`localhost' in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/class.smtp.php on line 368
+[09-Feb-2023 15:16:27 UTC] PHP Notice:  Undefined variable: message in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 8
+[09-Feb-2023 15:22:27 UTC] PHP Notice:  Undefined variable: message in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 8
+[14-Feb-2023 11:47:51 UTC] PHP Warning:  require(C:/xampp/htdocs/PHPMailer/PHPMailer-master/src/Exception.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[14-Feb-2023 11:47:51 UTC] PHP Warning:  require(C:/xampp/htdocs/PHPMailer/PHPMailer-master/src/Exception.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[14-Feb-2023 11:47:51 UTC] PHP Fatal error:  require(): Failed opening required 'C:/xampp/htdocs/PHPMailer/PHPMailer-master/src/Exception.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[14-Feb-2023 11:48:49 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  include(): Failed opening '../includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  include(../database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  include(../database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  include(): Failed opening '../database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:21:24 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:21:24 UTC] PHP Fatal error:  require(): Failed opening required '../mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:22:41 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:22:41 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:22:41 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:22:41 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:22:41 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:22:41 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:22:41 UTC] PHP Fatal error:  require(): Failed opening required '../mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:22 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:22 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:22 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:22 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:22 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:22 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:24 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:24 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:24 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:25 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:25 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(/includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(): Failed opening '/includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(/database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  include(): Failed opening '/database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:23:25 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:23:25 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  include(../uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  include(../uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  include(): Failed opening '../uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  include(../database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  include(../database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  include(): Failed opening '../database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[16-Feb-2023 11:24:15 UTC] PHP Warning:  require(/mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:24:15 UTC] PHP Fatal error:  require(): Failed opening required '/mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:26:58 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[16-Feb-2023 11:26:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 18
+[16-Feb-2023 11:29:03 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[16-Feb-2023 11:29:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 18
+[16-Feb-2023 11:29:06 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[16-Feb-2023 11:29:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 18
+[16-Feb-2023 11:55:30 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[16-Feb-2023 11:55:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 18
+[16-Feb-2023 11:56:56 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:56:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 16
+[16-Feb-2023 11:56:58 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:56:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 16
+[16-Feb-2023 11:56:58 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:56:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 16
+[16-Feb-2023 11:56:59 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:56:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 16
+[16-Feb-2023 11:56:59 UTC] PHP Warning:  Creating default object from empty value in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 7
+[16-Feb-2023 11:56:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method stdClass::setFrom() in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 16
+[17-Feb-2023 06:28:50 UTC] PHP Notice:  Undefined variable: header in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 8
+[17-Feb-2023 09:39:44 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:39:44 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:39:44 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:40:53 UTC] PHP Warning:  require(/admin/vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:40:53 UTC] PHP Fatal error:  require(): Failed opening required '/admin/vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:41:30 UTC] PHP Warning:  require(../admin/vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:41:30 UTC] PHP Warning:  require(../admin/vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:41:30 UTC] PHP Fatal error:  require(): Failed opening required '../admin/vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:41:57 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:41:57 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:41:57 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 20
+[17-Feb-2023 09:48:53 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 22
+[17-Feb-2023 09:49:32 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 22
+[17-Feb-2023 09:50:00 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 22
+[17-Feb-2023 09:50:03 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 22
+[17-Feb-2023 09:56:54 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[17-Feb-2023 09:56:54 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[17-Feb-2023 09:56:54 UTC] PHP Warning:  include(): Failed opening '../includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[17-Feb-2023 09:56:54 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[17-Feb-2023 09:56:54 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[17-Feb-2023 09:56:54 UTC] PHP Fatal error:  require(): Failed opening required '../mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[17-Feb-2023 09:57:40 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[17-Feb-2023 09:57:40 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[17-Feb-2023 09:57:40 UTC] PHP Warning:  include(): Failed opening '../includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[17-Feb-2023 09:57:40 UTC] PHP Warning:  require(../PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[17-Feb-2023 09:57:40 UTC] PHP Warning:  require(../PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[17-Feb-2023 09:57:40 UTC] PHP Fatal error:  require(): Failed opening required '../PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[17-Feb-2023 10:02:05 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[17-Feb-2023 10:02:05 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[18-Feb-2023 08:00:57 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[18-Feb-2023 08:00:57 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[18-Feb-2023 08:01:23 UTC] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[18-Feb-2023 08:02:20 UTC] PHP Fatal error:  Uncaught Error: Class 'mail2\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 9
+[18-Feb-2023 08:05:01 UTC] PHP Fatal error:  Uncaught Error: Class 'mail2\PHPMailer' not found in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 13
+[18-Feb-2023 08:27:03 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[18-Feb-2023 08:46:16 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[20-Feb-2023 07:51:03 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[20-Feb-2023 10:03:35 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[20-Feb-2023 10:18:32 UTC] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/b0odpdjwyozt/public_html/nayaudyogh.com/mail/PHPMailerAutoload.php on line 45
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  include(../includes/uniques.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  include(): Failed opening '../includes/uniques.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 2
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  include(../database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  include(../database/config.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  include(): Failed opening '../database/config.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 3
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[27-Feb-2023 05:27:13 UTC] PHP Warning:  require(../mail/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5
+[27-Feb-2023 05:27:13 UTC] PHP Fatal error:  require(): Failed opening required '../mail/PHPMailerAutoload.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/b0odpdjwyozt/public_html/nayaudyogh.com/allmail.php on line 5

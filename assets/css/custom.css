@@ -1,0 +1,52 @@
+.login-box{
+    background-color: white;
+    mix-blend-mode:normal;
+    padding: 40px;
+    border-radius: 10px;
+    border: white;
+    box-shadow: 0 8px 20px 0 rgba(7, 240, 248, 0.959);
+    
+}
+input {
+    border-color:#00C0FF;
+  }
+input:hover{
+    /* transform: scale(1.1); */
+    border-color: #00C0FF;
+    border-radius: 5px;
+}
+
+.display-block{
+    color: #FC7F01;
+}
+.outer-container {
+	background: #F0F0F0;
+	border: #e0dfdf 1px solid;
+	padding: 40px 20px;
+	border-radius: 2px;
+}
+
+
+
+.tutorial-table {
+	margin-top: 40px;
+	font-size: 0.8em;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tutorial-table th {
+	background: #f0f0f0;
+	border-bottom: 1px solid #dddddd;
+	padding: 8px;
+	text-align: left;
+}
+
+.tutorial-table td {
+	background: #FFF;
+	border-bottom: 1px solid #dddddd;
+	padding: 8px;
+	text-align: left;
+}
+
+

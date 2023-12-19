@@ -1,0 +1,66 @@
+.page-content {
+    background: #fff;
+}
+
+.navbar .logo-box {
+    background: #fff;
+}
+
+.navbar .logo-box a {
+    color:#000;
+}
+
+.sidebar {
+   background:linear-gradient(45deg,#f39209,#ffcb80);
+   
+}
+
+.sidebar-header {
+    background:linear-gradient(45deg,#f39209,#ffcb80);
+    
+}
+
+.sidebar-profile span small {
+    color: #000;
+}
+
+.menu {
+    background: linear-gradient(45deg,#f39209,#ffcb80);
+     
+}
+
+.menu.accordion-menu a {
+    color:#000;
+}
+
+.menu.accordion-menu > li > a:hover {
+	background:  linear-gradient(45deg,#4099ff,#73b4ff);
+	
+    color: #fff;
+}
+
+.menu.accordion-menu > li.active > a,
+.menu.accordion-menu > li.active.open > a {
+	background:linear-gradient(45deg,#f39209,#ffcb80);
+	
+    color: #fff;
+}
+
+.small-sidebar:not(.page-sidebar-fixed) .accordion-menu li.droplink:hover > a,
+.horizontal-bar .accordion-menu > li.droplink:hover > a,
+.menu.accordion-menu ul,
+.menu.accordion-menu li.open > a,
+.hover-menu .accordion-menu > li.droplink:hover > a {
+    background:#757374;
+    color: #fff;
+}
+
+.menu.accordion-menu ul li a:hover,
+.menu.accordion-menu ul li.active a {
+	background: #fff;
+    color: #fff;
+}
+
+.menu.accordion-menu ul li a {
+    color: #fff;
+}
