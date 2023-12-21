@@ -100,7 +100,9 @@ if (isset($_POST["import"])) {
             $option1 ="";
             if (isset($value[4])) {
                 $option1 = mysqli_real_escape_string($conn , $value[4]);
-				if(trim($option1) ==='')
+				if(trim($option1) !=='' )
+				$option1_validate[]=1;
+				else if($type==="FB")
 				$option1_validate[]=1;
 
 				else
@@ -109,8 +111,10 @@ if (isset($_POST["import"])) {
             $option2 ="";
             if (isset($value[5])) {
                 $option2 = mysqli_real_escape_string($conn , $value[5]);
-				if(trim($option2) ==='')
+				if(trim($option2) !=='')
 				     $option2_validate[]=1;
+				else if($type==="FB")
+				$option2_validate[]=1;
 
 				else
 				     $option2_validate[]=0;
@@ -118,15 +122,19 @@ if (isset($_POST["import"])) {
             $option3 ="";
             if (isset($value[6])) {
                 $option3 = mysqli_real_escape_string($conn , $value[6]);
-				if(trim($option3) ==='')
+				if(trim($option3) !=='')
 				    $option3_validate[]=1;
+				else if($type==="FB")
+				$option3_validate[]=1;
 				  else
 				$option3_validate[]=0;
             }
             $option4="";
             if (isset($value[7])) {
                 $option4 = mysqli_real_escape_string($conn, $value[7]);
-				if(trim($option4) ==='')
+				if(trim($option4) !=='')
+				$option4_validate[]=1;
+				else if($type==="FB")
 				$option4_validate[]=1;
 				  else
 				$option4_validate[]=0;
@@ -173,7 +181,7 @@ if (isset($_POST["import"])) {
             
             $extension = $drawing->getExtension();
 			
-            if (($exam_idvalidate[$i-1] ==1) && ($type_validate[$i-1]==1) && ($ques_typevalidate[$i-1]==1)&& (strlen($question) > 8) && ((strlen($option1) > 0)) && ((strlen($option2) > 0)) && ((strlen($option3) > 0)) && ((strlen($option4) > 0))&& ( $answer_validate[$i-1]) )
+           if (($exam_idvalidate[$i-1] ==1) && ($type_validate[$i-1]==1) && ($ques_typevalidate[$i-1]==1)&& ($question_validate[$i-1] ==1) && ($option1_validate[$i-1]==1) && ($option2_validate[$i-1]==1) && ($option3_validate[$i-1]==1) && ($option4_validate[$i-1]==1)&& ( $answer_validate[$i-1]==1) )
 			{
                
 				$sql = "SELECT * FROM tbl_questions WHERE exam_id = '$exam_id' AND question = '$question'";
@@ -683,15 +691,15 @@ $conn->close();
                                                                     <tr>
 																	<tr style="background-color:#ffffcf">
 																	<td <?php  echo $statuscolor;?>><?php echo $i." ". $statusmessg;?></td>
-																	<td <?php if($exam_idvalidate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][0]; ?></td>
-																    <td <?php if($type_validate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][1]?></td>
-																	<td <?php if($ques_typevalidate[$i-1]== 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][2] ?></td>
-																	<td <?php if($question_validate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][3] ?></td>
-																	<td <?php if($option1_validate[$i-1]== 1)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][4] ?></td>
-																	<td <?php if($option2_validate[$i-1]== 1)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][5] ?></td>
-																	<td <?php if($option3_validate[$i-1]== 1)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][6] ?></td>
-																	<td <?php if($option4_validate[$i-1]== 1)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo $spreadSheetAry[$i][7] ?></td>
-																	<td <?php if($answer_validate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;'"; ?>><?php  echo  $spreadSheetAry[$i][8] ?></td> 
+																	<td <?php if($exam_idvalidate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][0]; ?></td>
+																    <td <?php if($type_validate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][1]?></td>
+																	<td <?php if($ques_typevalidate[$i-1]== 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][2] ?></td>
+																	<td <?php if($question_validate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][3] ?></td>
+																	<td <?php if($option1_validate[$i-1]== 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][4] ?></td>
+																	<td <?php if($option2_validate[$i-1]== 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][5] ?></td>
+																	<td <?php if($option3_validate[$i-1]== 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][6] ?></td>
+																	<td <?php if($option4_validate[$i-1]== 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo $spreadSheetAry[$i][7] ?></td>
+																	<td <?php if($answer_validate[$i-1] == 0)echo " style=' border-color:red;border-width:5px;'";else echo " style=' border-color: green;border-width:5px;'"; ?>><?php  echo  $spreadSheetAry[$i][8] ?></td> 
                                                                     </tr>
                                                          <?php
                                                             }

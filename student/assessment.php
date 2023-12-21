@@ -581,7 +581,7 @@ if (sizeof($queslist) > 0)//$result->num_rows > 0)
         $typ= $queslist[$x]['ques_type'];
         if($typ=="E"|| $typ== "EI")
         {
-            $ques_style="radial-gradient(circle, #ffffff, #dbfaff, #75ffff, #00fffa, #00ff9b)";//#98FB98
+            $ques_style="radial-gradient(circle, #fffff0, #dbfaff, #75ffff, #00fffa, #00ff9b)";//#98FB98
             $total_marks += 1;
 
         }
