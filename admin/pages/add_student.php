@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
     }
 } else {
 
-$sql = "INSERT INTO tbl_users (user_id, first_name, last_name, gender, dob, address, email, phone, department, category)
+$sql = "INSERT INTO tbl_users (user_id, first_name, last_name, gender, dob, address, email, phone, department, category,subject)
 VALUES ('$student_id', '$fname', '$lname', '$gender', '$dob', '$address', '$email', '$phone', '$department', '$category', '$subject')";
 
 if ($conn->query($sql) === TRUE) {
