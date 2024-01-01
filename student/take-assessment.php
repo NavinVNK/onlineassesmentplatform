@@ -70,7 +70,7 @@ if ($result->num_rows >= $ques_medium) {
 $sql = "SELECT * FROM tbl_questions WHERE exam_id = '$exam_id' and ques_type ='H'";
 $result = $conn->query($sql);
 $ques_hard=ceil($ques_hard_per*$result->num_rows)/100;
-if ($result->num_rows > $ques_hard) {
+if ($result->num_rows >=$ques_hard) {
 
 
 } else {
