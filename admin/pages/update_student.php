@@ -38,6 +38,17 @@ if ($result->num_rows > 0) {
 $sql = "UPDATE tbl_users SET first_name = '$fname', last_name = '$lname', gender = '$gender', dob = '$dob', address = '$address', email = '$email', phone = '$phone', department = '$department', category = '$category',subject = '$subject' WHERE user_id='$student_id'";
 
 if ($conn->query($sql) === TRUE) {
+	$sql = "DELETE FROM tbl_assessment_records WHERE student_id = '$student_id'";
+
+	if ($conn->query($sql) === true)
+	{
+
+	}
+	else
+	{
+
+	}
+
   header("location:../edit-student.php?rp=7823&sid=$student_id");
 } else {
   header("location:../edit-student.php?rp=1298&sid=$student_id");

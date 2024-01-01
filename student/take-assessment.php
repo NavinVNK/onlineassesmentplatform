@@ -390,7 +390,7 @@ header("location:./");
 								if ($record_found == "1") {
 
 							                     	if ($td >= 0){
-							                     	    	print '	 td today dade- retake conv date '.$td ;
+							                     	    	//print '	 td today dade- retake conv date '.$td ;
 							
 									
 							                         	if ($dcc > 1){
@@ -427,7 +427,7 @@ header("location:./");
 									
 								}
 								else{
-								     if ($tflag == 0||$eflag == 0||$mflag == 0||$hflag == 0)
+								                  if ($tflag == 0||$eflag == 0||$mflag == 0||$hflag == 0)
 								                     {
                                                             
                                                             print '

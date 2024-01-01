@@ -7,7 +7,6 @@ session_start();
 
 if (isset($_SESSION['current_examid']))
 {
-    echo "Line 10".$_SESSION['current_examid'];
     include '../database/config.php';
     $exam_id = $_SESSION['current_examid'];
     $retake_status = $_SESSION['student_retake'];
@@ -54,13 +53,11 @@ if (isset($_SESSION['current_examid']))
     }
     else
     {
-        echo "Line 56 No records founf";
-        header("location:./");
+          header("location:./");
     }
 }
 else
 {
-    echo "Line 61 No session set";
     header("location:./");
 }
 
