@@ -102,43 +102,52 @@ if (isset($_POST["import"])) {
                 $option1 = mysqli_real_escape_string($conn , $value[4]);
 				if(trim($option1) !=='' )
 				$option1_validate[]=1;
-				else if($type==="FB")
-				$option1_validate[]=1;
-
 				else
 				$option1_validate[]=0;
             }
+
+			else if($type==="FB")
+			$option1_validate[]=1;
+		    else
+			{}
+
             $option2 ="";
             if (isset($value[5])) {
                 $option2 = mysqli_real_escape_string($conn , $value[5]);
 				if(trim($option2) !=='')
 				     $option2_validate[]=1;
-				else if($type==="FB")
-				$option2_validate[]=1;
 
 				else
 				     $option2_validate[]=0;
             }
+			else if($type==="FB")
+			$option2_validate[]=1;
+		    else
+			{}
             $option3 ="";
             if (isset($value[6])) {
                 $option3 = mysqli_real_escape_string($conn , $value[6]);
 				if(trim($option3) !=='')
 				    $option3_validate[]=1;
-				else if($type==="FB")
-				$option3_validate[]=1;
-				  else
+				else
 				$option3_validate[]=0;
             }
+			else if($type==="FB")
+			$option3_validate[]=1;
+		    else
+			{}
             $option4="";
             if (isset($value[7])) {
                 $option4 = mysqli_real_escape_string($conn, $value[7]);
 				if(trim($option4) !=='')
-				$option4_validate[]=1;
-				else if($type==="FB")
-				$option4_validate[]=1;
-				  else
-				$option4_validate[]=0;
+				   $option4_validate[]=1;
+				else
+				  $option4_validate[]=0;
             }
+			else if($type==="FB")
+			$option4_validate[]=1;
+		    else
+			{}
             $answer="";
             if (isset($value[8])) {
                 $answer = mysqli_real_escape_string($conn, $value[8]);
