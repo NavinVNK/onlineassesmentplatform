@@ -117,7 +117,7 @@ $sql4 = "UPDATE tbl_assessment_records SET score='0', status='MAL2' WHERE record
                                         }
                                              $conn->close();
                                              // Close the database connection
-                                             mysqli_close($db);
+                                             //mysqli_close($db);
 
 
 

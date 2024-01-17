@@ -179,14 +179,14 @@ header("location:./");
                     </div>
                     <ul class="menu accordion-menu">
                         <li><a href="./" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
-                        <li><a href="departments.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Departments</p></a></li>
-                        <li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Categories</p></a></li>
-                        <li><a href="subject.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-file"></span><p>Subjects</p></a></li>
-                        <li><a href="students.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Students</p></a></li>
-                        <li><a href="examinations.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-book"></span><p>Examinations</p></a></li>
-                        <li><a href="questions.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-question-sign"></span><p>Questions</p></a></li>
-                        <li><a href="notice.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th-list"></span><p>Notice</p></a></li>
-                        <li class="active"><a href="results.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-certificate"></span><p>Exam Results</p></a></li>
+                        <li><a href="departments.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Industry</p></a></li>
+                        <li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Domain</p></a></li>
+                        <li><a href="subject.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-file"></span><p>Skill</p></a></li>
+                        <li><a href="students.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Candidate</p></a></li>
+                        <li><a href="examinations.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-book"></span><p>Assessment</p></a></li>
+                        <li><a href="questions.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-question-sign"></span><p>Question</p></a></li>
+                        <li><a href="notice.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th-list"></span><p>Bulletin Board</p></a></li>
+                        <li class="active"><a href="results.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-certificate"></span><p>Assessment Result</p></a></li>
 
                     </ul>
                 </div>
@@ -250,11 +250,11 @@ header("location:./");
                                             <tr>
                                                 <th>Student Name</th>
 												<th>Student ID</th>
-												<th>Exam Name</th>
+												<th>Assessment Name</th>
                                                 <th>Score</th>
                                                 <th>Status</th>
 												<th>Date</th>
-												<th>RE Exam</th>
+												<th>Re-Exam</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -262,11 +262,11 @@ header("location:./");
                                             <tr>
                                                 <th>Student Name</th>
 												<th>Student ID</th>
-												<th>Exam Name</th>
+												<th>Assessment Name</th>
                                                 <th>Score</th>
                                                 <th>Status</th>
 												<th>Date</th>
-												<th>RE Exam</th>
+												<th>Re-Exam</th>
                                                 
                                                 <th><a class="btn btn-primary" href="results/'.$exam_name.'Results.xlsx">Export Excel</a></th>
                                                                 

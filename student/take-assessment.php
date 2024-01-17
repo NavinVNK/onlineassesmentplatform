@@ -177,6 +177,40 @@ header("location:./");
                 width: 20px;
                 background-color: #98FB98;
             }
+            .box-container {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .label {
+            margin-right: 5px;
+            color: #000;
+            font-size: small;
+        }
+
+        .green-box, .yellow-box, .red-box {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .green-box {
+            background-color: green;
+        }
+
+        .yellow-box {
+            background-color: yellow;
+        }
+
+        .red-box {
+            background-color: red;
+        }
+
+        .value {
+            display: inline-block;
+        }
         </style>
         
     </head>
@@ -348,16 +382,35 @@ header("location:./");
                                                </tr>
 											   
 											   	<tr>
-                                                   <th rowspan="2"scope="row">7</th>
+                                                   <th scope="row">7</th>
                                                    <td z-index:1;>Questions</td>
                                                    <td><b><?php echo "$tot_ques &nbsp;&nbsp;&nbsp;&nbsp;"; ?></b>
-                                                    <br>
-                                                    <br>
-                                                    <div><span id="red" >Hard :<b><?php echo "$ques_hard_per"; ?>%</b></span> <span id="yellow">Medium :<b><?php echo "$ques_medium_per"; ?>%</b></span><span id="green">Easy :<b><?php echo "$ques_easy_per"; ?>%</b></span>
-                                                    </div></td>
+                                                  </td>
                                                   
                                                </tr>
+                                               <tr>
+                                               <th scope="row">8</th>
+                                              <td colspan="2"> 
+                                         <div class="box-container">
+                                    <span class="label">Hard</span>
+                                    <div class="red-box"></div>
+                                    <span class="value"><?php echo "$ques_hard_per"; ?> %</span>
+                                    </div>
 
+                                           <div class="box-container">
+                                    <span class="label">Medium</span>
+                                    <div class="yellow-box"></div>
+                                    <span class="value"><?php echo "$ques_medium_per"; ?>%</span>
+                                    </div>'
+
+                                   <div class="box-container">
+                                    <span  class="label">Easy</span>
+                                    <div class="green-box"></div>
+                                    <span class="value"><?php echo "$ques_easy_per"; ?>%</span>
+                                    </div>
+                                    </td>
+                                    
+                                 </tr>
                                               
                                            </tbody>
                                         </table>

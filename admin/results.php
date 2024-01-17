@@ -1,4 +1,7 @@
 <?php 
+require './vendor/autoload.php';
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 include 'includes/check_user.php'; 
 include 'includes/check_reply.php';
 ?>
@@ -181,7 +184,119 @@ include 'includes/check_reply.php';
 
                                 <div class="panel panel-white">
                                     <div class="panel-body">
-                                                        <div class="table-responsive">
+                                    <div role="tabpanel">
+
+                                        <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#tab5" role="tab" data-toggle="tab">Results</a></li>
+                                        <li role="presentation"><a href="#tab51" role="tab" data-toggle="tab">History</a></li> 
+                                        </ul>
+                                        <div class="tab-content">
+
+                                             <div role="tabpanel" class="tab-pane active fade in" id="tab5">
+                                             <div class="table-responsive">
+										   <?php
+                                                 $spreadsheet = new Spreadsheet();
+                                                 $sheet = $spreadsheet->getActiveSheet();
+                                                 $sheet->setCellValue('C1', $exam_name);
+										   include '../database/config.php';
+
+										   $sql = "SELECT * FROM tbl_assessment_history ";
+                                           $result = $conn->query($sql);
+
+                                           if ($result->num_rows > 0) {
+
+                                            $i=2;
+                                            $sheet->setCellValue('A1'," Id");
+                                            $sheet->setCellValue('B1'," Student Name");
+                                            $sheet->setCellValue('C1',"Student ID");
+                                         
+                                            $sheet->setCellValue('D1',"Score %");
+                                            $sheet->setCellValue('E1',"Status");
+                                            $sheet->setCellValue('F1',"Date");
+										print '
+										<table id="example" class="display table" style="width: 100%; cellspacing: 0;">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Student Name</th>
+												<th>Student ID</th>
+												<th>Assessment Name</th>
+                                                <th>Score</th>
+                                                <th>Status</th>
+												<th>Date</th>
+												<th>Re-Exam</th>
+                                                <th>DownloadS</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Student Name</th>
+												<th>Student ID</th>
+												<th>Assessment Name</th>
+                                                <th>Score</th>
+                                                <th>Status</th>
+												<th>Date</th>
+												<th>Re-Exam</th>
+                                                <th><a class="btn btn-primary" href="results/HistoryResults.xlsx">Export Excel</a></th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>';
+     
+                                           while($row = $result->fetch_assoc()) {
+                                               $i++;
+                                            $sheet->setCellValue('A'. $i, $row['id']);
+                                            $sheet->setCellValue('B'. $i, $row['student_name']);
+                                            $sheet->setCellValue('C'. $i, $row['student_id']);
+                                         
+                                            $sheet->setCellValue('D'. $i, $row['score']);
+                                            $sheet->setCellValue('E'. $i, $row['status']);
+                                            $sheet->setCellValue('F'. $i, $row['date']);
+                                          print '
+										       <tr>
+                                               <td>'.$row['id'].'</td>
+                                                <td>'.$row['student_name'].'</td>
+												<td>'.$row['student_id'].'</td>
+                                                <td>'.$row['exam_name'].'</td>
+                                                <td><b>'.$row['score'].'%</b></td>
+												<td>'.$row['status'].'</td>
+												<td>'.$row['date'].'</td>
+												<td>'.$row['next_retake'].'</td>
+                                                <td></td>
+
+          
+                                            </tr>';
+                                           }
+                                          
+										   $writer = new Xlsx($spreadsheet);
+                                           if (file_exists('results/HistoryResults.xlsx')) {
+                                                 unlink('results/HistoryResults.xlsx');
+                                         }
+                                           $writer->save('results/HistoryResults.xlsx');
+										   print '
+									   </tbody>
+                                       </table>  ';
+                                            } else {
+											print '
+												<div class="alert alert-info" role="alert">
+                                        Nothing was found in database.
+                                    </div>';
+    
+                                           }
+                                           $conn->close();
+										   
+										   ?>
+
+
+                 
+
+                                    </div>                          
+
+                                    
+                                    </div>
+                                               <div role="tabpanel" class="tab-pane  fade " id="tab51">
+                                               <div class="table-responsive">
 										   <?php
 										   include '../database/config.php';
 										   $sql = "SELECT * FROM tbl_examinations";
@@ -266,11 +381,13 @@ include 'includes/check_reply.php';
                                            $conn->close();
 										   
 										   ?>
-
-
-                 
-
                                     </div>
+
+                                               </div>   
+                                          </div>
+
+                                   </div>
+
                                     </div>
                                 </div>  
   

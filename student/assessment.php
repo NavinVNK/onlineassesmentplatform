@@ -3,17 +3,18 @@ date_default_timezone_set('Asia/Calcutta');
 include 'includes/check_user.php';
 include 'includes/check_reply.php';
 include '../includes/uniques.php';
+include '../includes/moverecords.php';
+include '../database/config.php';
 session_start();
 
 if (isset($_SESSION['current_examid']))
 {
-    include '../database/config.php';
     $exam_id = $_SESSION['current_examid'];
     $retake_status = $_SESSION['student_retake'];
 
     if ($retake_status == "1")
     {
-        $sql = "DELETE FROM tbl_assessment_records WHERE student_id = '$myid' AND exam_id = '$exam_id'";
+        /*$sql = "DELETE FROM tbl_assessment_records WHERE student_id = '$myid' AND exam_id = '$exam_id'";
 
         if ($conn->query($sql) === true)
         {
@@ -22,7 +23,8 @@ if (isset($_SESSION['current_examid']))
         else
         {
 
-        }
+        }*/
+        moveAssessmentToHistory($myid, $conn);
     }
 
     $sql = "SELECT * FROM tbl_examinations WHERE exam_id = '$exam_id' AND category = '$mycategory' AND status = 'Active'";
@@ -685,6 +687,7 @@ else
         </div>
     </div>
         </main>
+        <?php $ms ="1";?>  
 		<?php if ($ms == "1")
 {
 ?> <div class="alert alert-success" id="snackbar"><?php echo "$description"; ?></div> <?php
@@ -808,6 +811,10 @@ $('#submitButton').click(function() {
                 data: { select_value: deptVal,id:id },
                 success: function(response) {
                    // alert(response);
+                   $('#snackbar').text("You have Refreshed Page").addClass('show');
+                    setTimeout(function () {
+                        $('#snackbar').removeClass('show');
+                    }, 3000); // Hide after 3 seconds
                     $("#quiz_form").append(response);
                     $("#quiz_form").submit(); 
 
@@ -831,6 +838,10 @@ $(window).blur(function(e) {
                             data: { select_value: deptVal,id:id },
                             success: function(response) {
                             // alert(response);
+                          $('#snackbar').text("You Moved out of Window").addClass('show');
+                            setTimeout(function () {
+                                $('#snackbar').removeClass('show');
+                            }, 3000); // Hide after 3 seconds
                                 $("#quiz_form").append(response);
                                 $("#quiz_form").submit(); 
 

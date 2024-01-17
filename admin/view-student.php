@@ -79,9 +79,6 @@ if ($result->num_rows > 0) {
         <link href="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet" type="text/css"/>
         <link href="../assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css"/>
         
-		
-
-        
     </head>
     <body <?php if ($ms == "1") { print 'onload="myFunction()"'; } ?>  class="page-header-fixed">
         <div class="overlay"></div>
@@ -347,17 +344,21 @@ if ($result->num_rows > 0) {
                                            while($row = $result->fetch_assoc()) {
                                               if($sdexam===$row['exam_name'])
                                               {
-                                                $sn='<td style="background-color: #34f8db;">'.$row['exam_name'].'</td>';
+                                                $tickStyle = "style='padding-left: 20px; background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAApElEQVR42mP4//8/AwnAwBFCUNg9gAAs8qF0MAE8zwMQDwtgBDuwQUAzhsFMQgMCeESDhgAMnRkAfjANPAHLEh1sGQgZqAYOy9V8fHxhsgT0DNR7AoGsJMBf2yAsCNOL4gAAAwIAO2CbTAAAAAElFTkSuQmCC') no-repeat left center; background-size: 16px 16px;'";
+
+                                                //$sn = "<td $tickStyle>".$row['exam_name']."</td>";
+                                                $sn='<td style="position: relative;background-color: #9bedff "><span style="position: absolute; right: 1px;font-size: large; color: #3498db; font-weight: bold;">&#10003;</span>'.$row['exam_name'].'</td>';
                                               }
                                               else{
-                                                $sn='<td style="background-color: #ffffcc;">'.$row['exam_name'].'</td>';//<td>'.$row['exam_name'].'</td>
+                                                $sn='<td style="background-color: #fffffc;">'.$row['exam_name'].'</td>';//<td>'.$row['exam_name'].'</td>
 
                                               }
 											   $status = $row['status'];
 											   if ($status == "Active") {
 											   $st = '<p class="text-success">ACTIVE</p>';
-											   $stl = '<a class="btn btn-success" href="send_email.php?examid='.$row['exam_id'].'&studid='.$_GET['sid'].' ">Send Email</a>';
-                                               
+											   //$stl = '<a id="sendMailBtn" class="btn btn-success" href="send_email.php?examid='.$row['exam_id'].'&studid='.$_GET['sid'].' ">Send Email</a>';
+                                               $stl = '<a id="sendMailBtn" class="btn btn-success"data-exam_id="' . $row['exam_id'] . '" data-sid="' . $_GET['sid'] . '">Send Email</a>';
+
 											   }else{
 											   $st = '<p class="text-danger">INACTIVE</p>'; 
                                                $stl = '<a class="btn btn-danger disabled" href="#">Send EMail</a>';											   
@@ -405,7 +406,7 @@ if ($result->num_rows > 0) {
 
                                      if ($result->num_rows > 0) {
 									print '
-									   <table id="example" class="display table" style="width: 100%; cellspacing: 0;">
+									   <table  class="display table" style="width: 100%; cellspacing: 0;">
                                         <thead>
                                             <tr>
                                                 <th>Assessment</th>
@@ -463,6 +464,7 @@ if ($result->num_rows > 0) {
                 
             </div>
         </main>
+        <?php $ms ="1";?>    
 		<?php if ($ms == "1") {
 ?> <div class="alert alert-success" id="snackbar"><?php echo "$description"; ?></div> <?php	
 }else{
@@ -506,6 +508,40 @@ function myFunction() {
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 </script>
+
+<script>
+        // Handle button click
+     $(document).ready(function() {
+        $(document).on('click','#sendMailBtn', function () {
+            // Perform AJAX call to send_mail.php
+            var examid=$(this).data('exam_id');
+            var studid=$(this).data('sid');
+            var row = $(this).closest('tr');
+            var rowfirst=row.find('td:first');
+            
+          //$('#snackbar').text(studid).addClass('show');
+          setTimeout(function () {
+                        $('#snackbar').removeClass('show');
+                    }, 3000);
+            $.ajax({
+                type: "GET",
+                url: "send_email.php",
+                data: { examid: examid,studid:studid},
+                success: function (response) {
+                    $('#example tbody tr').not(row).find('td:first span').remove();
+                    $('#example tbody tr').not(row).find('td:first').css('background-color', '#ffffb0');
+                    rowfirst.append('<span style="position: absolute; left: 1px;font-size: large; color: #3498db; font-weight: bold;">&#10003;</span>');
+                    row.find('td:first').css('background-color', '#70f8ff');
+                    // Display snackbar message
+                    $('#snackbar').text(response).addClass('show');
+                    setTimeout(function () {
+                        $('#snackbar').removeClass('show');
+                    }, 3000); // Hide after 3 seconds
+                }
+            });
+        });
+    });
+    </script>
     </body>
 
 </html>

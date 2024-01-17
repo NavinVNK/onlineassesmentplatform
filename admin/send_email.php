@@ -3,13 +3,14 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
-
+include '../includes/moverecords.php';
+include '../database/config.php';
 include '../mail2/PHPMailer.php';
 include '../mail2/Exception.php';
 include '../mail2/SMTP.php';
 
 if (isset($_GET['studid'])&& isset($_GET['examid'])) {
-	include '../database/config.php';
+    $ms =1;
 	$student_id = mysqli_real_escape_string($conn, $_GET['studid']);
 	$sql = "SELECT * FROM tbl_users WHERE user_id = '$student_id'";
 $result = $conn->query($sql);
@@ -20,7 +21,7 @@ if ($result->num_rows > 0) {
 	$sdfname = $row['first_name'];
 	$sdlname = $row['last_name'];
 	$sdemail = $row['email'];
-
+    $sdexam = $row['exam'];
     }
 } else {
    // header("location:./");
@@ -40,21 +41,38 @@ if ($result->num_rows > 0) {
 } else {
    // header("location:./");
 }
-$sql = "UPDATE tbl_users SET exam='$exam_name' WHERE user_id = '$student_id'";
+if($sdexam===$exam_name)
+{
 
-if ($conn->query($sql) === TRUE) {
-    echo "updated";
-} else {
-    echo "Not updated";
 }
+else{
+        $sql = "UPDATE tbl_users SET exam='$exam_name' WHERE user_id = '$student_id'";
+
+        if ($conn->query($sql) === TRUE) {
+          /*  $sql = "DELETE FROM tbl_assessment_records WHERE student_id = '$student_id'";
+
+            if ($conn->query($sql) === true)
+            {
+
+            }
+            else
+            {
+
+            }*/
+            moveAssessmentToHistory($student_id, $conn);
+            echo "updated";
+        } else {
+            echo "Not updated";
+        }
+    }   
 	
 }else{
 	//header("location:./");
 }
-//echo $exam_name.$exam_date.$sdfname;
+echo $exam_name.$exam_date.$sdfname;
 
 //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+/*$mail = new PHPMailer(true);
 
 try {
     //Server settings
@@ -92,6 +110,6 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     header("location:./view-student.php?id='.$student_id.'&rp=4001");
     
-}
+}*/
 
 ?>

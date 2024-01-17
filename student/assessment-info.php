@@ -1,4 +1,13 @@
-<?php include 'includes/check_user.php';
+
+<?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+include '../mail2/PHPMailer.php';
+include '../mail2/Exception.php';
+include '../mail2/SMTP.php';
+include 'includes/check_user.php';
 include '../includes/uniques.php';
 if (isset($_SESSION['record_id'])) {
 $record_id = $_SESSION['record_id'];
@@ -17,65 +26,44 @@ if ($result->num_rows > 0) {
 	$next_retake = $row['next_retake'];
 	$taking_date = $row['date'];
     }
-        $message =" <table class='table' rules='all' style='border-color: #666;' cellpadding='10'>
-                                           </thead>
-                                           <tbody>
-                                               <tr style='background: #eee;'>
-                                                   <th scope='row'>1</th>
-                                                   <td><strong>Assessment Name</td>
-                                                   <td> $exam_name</td>
-                                               </tr>
-											     <tr style='background: #eee;'>
-                                                   <th scope='row'>2</th>
-                                                   <td><strong>Candidate_name</td>
-                                                   <td>$myfname $mylname</td>
-                                               </tr>
-											    <tr style='background: #eee;'>
-                                                   <th scope='row'>3</th>
-                                                   <td><strong>Score</td>
-                                                   <td> $score %</td>
-                                               </tr>
+       
+  /*  $mail = new PHPMailer(true);
 
-											   
-											  <tr style='background: #eee;'>
-                                                   <th scope='row'>4</th>
-                                                   <td><strong>Next Re-take</td>
-                                                   <td>$next_retake</td>
-                                               </tr>
+try {
+    //Server settings
+  //  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+   // $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'mail.7hillslab.in';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'admin@7hillslab.in';                     //SMTP username
+    $mail->Password   = '7hills@2023';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-                                              
-                                           </tbody>
-                                        </table>";
-  /*  require '../mail/PHPMailerAutoload.php';
+    //Recipients
+    $mail->setFrom('admin@7hillslab.in', '7hillsLab Admin');
+ //   $mail->addAddress('meghanap63@gmail.com', 'Joe User');     //Add a recipient
+    $mail->addAddress($myemail , $myfullname);                //Name is optional
+  //  $mail->addReplyTo('meghana.prakash@7hillsts.com', 'Information');
+    $mail->addCC("chamundeeswari.swamiaiah@7hillsts.com");
+    //$mail->addBCC('ganeshan.vnk@gmail.com');
 
-$mail = new PHPMailer;
-                          
+    //Attachments
+   // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+   // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 
-//$mail->isSMTP();                                      
-$mail->Host = 'smtp.7hillsts.com';
-$mail->SMTPAuth = true;                               
-$mail->Username = 'Admin';           
-$mail->Password = '2021@7hillsTS';                         
-$mail->CharSet    = 'UTF-8';
-$mail->SMTPDebug  = 3;
-$mail->SMTPSecure = "ssl";
-$mail->Port       = 465;                                   
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Assesment Result';
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+    $mail->send();
+    //echo 'Message has been sent';
+} catch (Exception $e) {
+   // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 
-$mail->setFrom('admin@7hillsts.com', 'Admin');
-$mail->addAddress($myemail , $myfullname);              
-$mail->addReplyTo('jobs@7hillsts.com', 'Admin');
-   
-$mail->isHTML(true);                                 
-
-$mail->Subject = 'Assesment Result';
-$mail->Body    = $message;
-$mail->AltBody = $message;
-
-if(!$mail->send()) {
-
-} else {
-
-} */
+  */
     
 } else {
     header("location:./");
@@ -118,12 +106,15 @@ header("location:./");
         <link href="../assets/css/modern.min.css" rel="stylesheet" type="text/css"/>
         <link href="../assets/css/themes/green.css" class="theme-color" rel="stylesheet" type="text/css"/>
         <link href="../assets/css/custom.css" rel="stylesheet" type="text/css"/>
-        
+        <link href="../assets/css/snack.css" rel="stylesheet" type="text/css"/>
         <script src="../assets/plugins/3d-bold-navigation/js/modernizr.js"></script>
         <script src="../assets/plugins/offcanvasmenueffects/js/snap.svg-min.js"></script>
         
     </head>
-    <body class="page-header-fixed">
+    <body <?php if ($ms == "1")
+{
+    print 'onload="myFunction()"';
+} ?> class="page-header-fixed">
         <div class="overlay"></div>
         <div class="menu-wrap">
             <nav class="profile-menu">
@@ -326,6 +317,16 @@ header("location:./");
                 
             </div>
         </main>
+            <?php $ms ="1";?>  
+            <?php if ($ms == "1")
+            {
+            ?> <div class="alert alert-success" id="snackbar"><?php echo "$description"; ?></div> <?php
+            }
+            else
+            {
+
+            }
+            ?>
 
         <div class="cd-overlay"></div>
 	
@@ -354,8 +355,42 @@ header("location:./");
         <script src="../assets/js/modern.js"></script>
 
 		<script src="../assets/js/canvasjs.min.js"></script>
-		 
+		 +
+        <script>
 
+        function myFunction() {
+            var x = document.getElementById("snackbar")
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }      
+        // Handle button click
+     $(document).ready(function() {
+       
+            // Perform AJAX call to send_mail.php
+            var myfullname= <?php echo json_encode($myfullname, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var myfname=<?php echo json_encode($myfname, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var mylname=<?php echo json_encode($mylname, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var myemail= <?php echo json_encode($myemail, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var exam_name=<?php echo json_encode($exam_name, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var score= <?php echo json_encode($score, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var next_retake= <?php echo json_encode($next_retake, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+            var taking_date=<?php echo json_encode($taking_date, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+
+            $.ajax({
+                type: "GET",
+                url: "send_result.php",
+                data: { myfullname: myfullname,myfname: myfname,mylname: mylname,myemail:myemail,exam_name:exam_name,score:score,next_retake:next_retake,taking_date:taking_date},
+                success: function (response) {
+                   // Display snackbar message
+                    $('#snackbar').text(response).addClass('show');
+                    setTimeout(function () {
+                        $('#snackbar').removeClass('show');
+                    }, 8000); // Hide after 3 seconds
+                }
+            });
+    
+    });
+    </script>
         
     </body>
 
