@@ -6,7 +6,7 @@ include 'includes/check_reply.php';
 	<html>
 
 	<head>
-		<title>OES | Manage Examinations</title>
+		<title>OES | Manage Assessment</title>
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		<meta charset="UTF-8">
 		<meta name="description" content="Online Examination System" />
@@ -120,20 +120,20 @@ include 'includes/check_reply.php';
 					</div>
 					<ul class="menu accordion-menu">
 						<li><a href="./" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-home"></span><p>Dashboard</p></a></li>
-						<li><a href="departments.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Departments</p></a></li>
-						<li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Categories</p></a></li>
-						<li><a href="subject.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-file"></span><p>Subjects</p></a></li>
-						<li><a href="students.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Students</p></a></li>
+						<li><a href="departments.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-folder-open"></span><p>Industry</p></a></li>
+						<li><a href="categories.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-tags"></span><p>Domain</p></a></li>
+						<li><a href="subject.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-file"></span><p>Skill</p></a></li>
+						<li><a href="students.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon glyphicon-user"></span><p>Candidate</p></a></li>
 						<li class="active"><a href="examinations.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-book"></span><p>Assessment</p></a></li>
-						<li><a href="questions.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-question-sign"></span><p>Questions</p></a></li>
-						<li><a href="notice.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th-list"></span><p>Notice</p></a></li>
-						<li><a href="results.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-certificate"></span><p>Exam Results</p></a></li>
+						<li><a href="questions.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-question-sign"></span><p>Question</p></a></li>
+						<li><a href="notice.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-th-list"></span><p>Bulletin Board</p></a></li>
+						<li><a href="results.php" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-certificate"></span><p>Exam Result</p></a></li>
 					</ul>
 				</div>
 			</div>
 			<div class="page-inner">
 				<div class="page-title">
-					<h3>Manage Examinations</h3> </div>
+					<h3>Manage Assessment</h3> </div>
 				<div id="main-wrapper">
 					<div class="row">
 						<div class="col-md-12">
@@ -143,8 +143,8 @@ include 'includes/check_reply.php';
 										<div class="panel-body">
 											<div role="tabpanel">
 												<ul class="nav nav-tabs" role="tablist">
-													<li role="presentation" class="active"><a href="#tab5" role="tab" data-toggle="tab">Examinations</a></li>
-													<li role="presentation"><a href="#tab6" role="tab" data-toggle="tab">Add Exam</a></li>
+													<li role="presentation" class="active"><a href="#tab5" role="tab" data-toggle="tab">Assessment</a></li>
+													<li role="presentation"><a href="#tab6" role="tab" data-toggle="tab">Add Assessment</a></li>
 												</ul>
 												<div class="tab-content">
 													<div role="tabpanel" class="tab-pane active fade in" id="tab5">
@@ -160,8 +160,8 @@ include 'includes/check_reply.php';
                                         <thead>
                                             <tr>
                                                 <th>Name</th>
-												<th>Category</th>
-												<th>Subject</th>
+												<th>Domain</th>
+												<th>Skill</th>
                                                 <th>Deadline</th>
 												<th>Total Ques/Set Que</th>
 												<th>T-Easy/S-Easy</th>
@@ -175,8 +175,8 @@ include 'includes/check_reply.php';
                                         <tfoot>
                                             <tr>
                                                 <th>Name</th>
-												<th>Category</th>
-												<th>Subject</th>
+												<th>Domain</th>
+												<th>Skill</th>
                                                 <th>Deadline</th>
 												<th>Total Ques/Set Que</th>
 												<th>T-Easy/S-Easy</th>
@@ -243,12 +243,12 @@ include 'includes/check_reply.php';
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
                                                     <li>'.$stl.'</li>
-													<li><a href="edit-exam.php?eid='.$row['exam_id'].'">Edit Exam</a></li>
+													<li><a href="edit-exam.php?eid='.$row['exam_id'].'">Edit Assessment</a></li>
 													<li><a href="view-questions.php?eid='.$row['exam_id'].'">View Questions</a></li>
 													<li><a href="add-questions.php?eid='.$row['exam_id'].'">Add Questions</a></li>
                                                     <li><a'; ?> onclick = "return confirm('Drop
 																<?php echo $row['exam_name']; ?> ?')"
-																	<?php print ' href="pages/drop_ex.php?id='.$row['exam_id'].'">Drop Exam</a></li>
+																	<?php print ' href="pages/drop_ex.php?id='.$row['exam_id'].'">Drop Assessment</a></li>
                                                 </ul>
                                             </div></td>
           
@@ -275,35 +275,35 @@ include 'includes/check_reply.php';
 														<form action="pages/add_exam.php" method="POST">
 															<div class="form-group">
 																<label for="exampleInputEmail1">Exam Name</label>
-																<input type="text" class="form-control" placeholder="Enter exam name" name="exam" required autocomplete="off"> </div>
+																<input type="text" class="form-control" placeholder="Enter Assessment Name" name="exam" required autocomplete="off"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">Exam Duration (Minutes)</label>
-																<input type="number" class="form-control" placeholder="Enter exam duration" name="duration" required autocomplete="off"> </div>
+																<input type="number" class="form-control" placeholder="Enter Assessment Duration" name="duration" required autocomplete="off"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">Passmark (%)</label>
-																<input type="number" class="form-control" placeholder="Enter passmark" name="passmark" required autocomplete="off"> </div>
+																<input type="number" class="form-control" placeholder="Enter Passmark" name="passmark" required autocomplete="off"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">Total questions</label>
-																<input type="number" id="totques" class="form-control" placeholder="Enter Total questions" name="tot_ques" required autocomplete="off"> </div>
+																<input type="number" id="totques" class="form-control" placeholder="Enter Total Questions" name="tot_ques" required autocomplete="off"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">No: of Easy questions in % </label>
-																<input type="number"  min="0" max="100"  id ="easy" class="category form-control" placeholder="Enter number of questions in %" name="ques_easy" required autocomplete="off" onchange="handleChange(this);"> </div>
+																<input type="number"  min="0" max="100"  id ="easy" class="category form-control" placeholder="Enter Number Of Questions in %" name="ques_easy" required autocomplete="off" onchange="handleChange(this);"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">No: of Medium questions in % </strong></label>
-																<input type="number"  min="0" max="100"  id ="medium"class="category form-control" placeholder="Enter number of questions in %" name="ques_medium" required autocomplete="off" onchange="handleChange(this);"> </div>
+																<input type="number"  min="0" max="100"  id ="medium"class="category form-control" placeholder="Enter Number Of Questions in %" name="ques_medium" required autocomplete="off" onchange="handleChange(this);"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">No: of Hard questions in % <strong><?php echo  $ques_hard;?></strong></label>
-																<input type="number" min="0" max="100" id ="hard" class="category form-control" placeholder="Enter number of questions in %" name="ques_hard" required autocomplete="off" onchange="handleChange(this);"> </div>
+																<input type="number" min="0" max="100" id ="hard" class="category form-control" placeholder="Enter Number Of Questions in %" name="ques_hard" required autocomplete="off" onchange="handleChange(this);"> </div>
 															<div class="form-group">
 																<label for="exampleInputEmail1">RE exam (if you take exam then show it again after some days)</label>
-																<input type="number"  class="form-control" placeholder="Enter days to attempt" name="attempts" required autocomplete="off"> </div>
+																<input type="number"  class="form-control" placeholder="Enter Days To Attempt" name="attempts" required autocomplete="off"> </div>
 															<div class="form-group">
 																<label>Deadline</label>
-																<input type="text" class="form-control date-picker" name="date" required autocomplete="off" placeholder="Select deadline"> </div>
+																<input type="text" class="form-control date-picker" name="date" required autocomplete="off" placeholder="Select Deadline"> </div>
 																<div class="form-group">
-                                            <label for="exampleInputEmail1">Select Domain</label>
+                                            <label for="exampleInputEmail1">Select Industry</label>
                                             <select id="dept"class="form-control" name="department" required>
-											<option value="" selected disabled>-Select Domain-</option>
+											<option value="" selected disabled>-Select Industry-</option>
 											<?php
 											include '../database/config.php';
 											$sql = "SELECT * FROM tbl_departments WHERE status = 'Active' ORDER BY name";
@@ -324,13 +324,13 @@ include 'includes/check_reply.php';
                                         </div>
 										
 										<div class="form-group">
-                                            <label for="exampleInputEmail1">Select Service</label>
+                                            <label for="exampleInputEmail1">Select Domain</label>
                                             <select id="category"class="form-control" name="category" required>
 											
 											</select>
                                         </div>	
 															<div class="form-group">
-																<label for="exampleInputEmail1">Select Subject</label>
+																<label for="exampleInputEmail1">Select Skill</label>
 																<select id="subject"class="form-control" name="subject" required>
 																	
 																</select>

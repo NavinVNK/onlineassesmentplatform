@@ -14,6 +14,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
 	$myid = $_SESSION['myid'];
 	$mycategory = $_SESSION['mycategory'];
 	$mysubject = $_SESSION['mysubject'];
+	$myexam= $_SESSION['myexam'];
 	if ($myrole == "student") {
 		
 	}else{

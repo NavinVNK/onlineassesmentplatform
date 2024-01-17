@@ -441,7 +441,7 @@ if (isset($_POST["import"])) {
                                                 <ul class="dropdown-menu" role="menu">
                                                     <li>'.$stl.'</li>
 													<li><a href="edit-student.php?sid='.$row['user_id'].'">Edit Candidate</a></li>
-													<li><a href="send-email.php?sid='.$row['user_id'].'">Send Email</a></li>
+													
 													<li><a href ="view-student.php?sid='.$row['user_id'].'">View Candidate</a></li>
                                                     <li><a'; ?> onclick = "return confirm('Drop <?php echo $row['first_name']; ?> ?')" <?php print ' href="pages/drop_sd.php?id='.$row['user_id'].'">Drop Student</a></li>
                                                 </ul>

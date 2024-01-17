@@ -141,6 +141,33 @@ if (!isset($_SESSION['page_loaded'])) {
         <script src="../assets/plugins/3d-bold-navigation/js/modernizr.js"></script>
         <script src="../assets/plugins/offcanvasmenueffects/js/snap.svg-min.js"></script>
         <style>
+            
+        #floatingDiv {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #floatingDiv img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        #closeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
           .strip {
          
          padding-top: 5px;
@@ -581,22 +608,23 @@ if (sizeof($queslist) > 0)//$result->num_rows > 0)
         $typ= $queslist[$x]['ques_type'];
         if($typ=="E"|| $typ== "EI")
         {
-            $ques_style="radial-gradient(circle, #fffff0, #dbfaff, #75ffff, #00fffa, #00ff9b)";//#98FB98
+            $ques_style="radial-gradient(circle, #ffffff, #ffffff, #56C878, #33b864, #228B22)";//#98FB98
             $total_marks += 1;
 
         }
           
         else if($typ=="M"|| $typ== "MI")
         {
-            $ques_style="radial-gradient(circle, #ffffff, #ffefff, #ffd8dd, #ffdc7d, #ffff00)";
+            $ques_style="radial-gradient(circle, #ffffff, #ffffff, #ffff60, #ffff10, #fff600)";
             $total_marks += 2;
         }
            
          else
          {
-            $ques_style="radial-gradient(circle, #ffffff, #fad5fc, #ffa0d2, #ff6781, #ff4500)";
+            $ques_style="radial-gradient(circle, #ffffff, #ffffff,#F25776,#dc143c, #cc0000)";
             $total_marks+=3;
          }
+
 
         if ($qno == "1")
         {
@@ -649,6 +677,13 @@ else
                 </div>
                 
             </div>
+
+ <!-- Floating Div for Selected Image -->
+        <div id="floatingDiv">
+            <span id="closeButton">&times;</span>
+            <img src="" alt="Selected Image" id="selectedImage">
+        </div>
+    </div>
         </main>
 		<?php if ($ms == "1")
 {
@@ -689,14 +724,21 @@ for (var i = 0; i < galleryImages.length; i++) {
 }
 
 function openPopup(imagePath) {
+      var selectedSrc = $(this).attr('src');
+                $('#selectedImage').attr('src', imagePath);
+                $('#floatingDiv').fadeIn();
     
-const popupWindow = window.open('', '_blank', 'width=600,height=600');
+/*const popupWindow = window.open('', '_blank', 'width=600,height=600');
 
 popupWindow.document.write(`
      <img src="${imagePath}" alt="Enlarged Image" style="max-width: 100%; max-height: 100%; height: auto; width: auto;">
 `);
-popupWindow.document.close();
+popupWindow.document.close();*/
 }
+// Close the floating div on close button click
+$('#closeButton').on('click', function() {
+                $('#floatingDiv').fadeOut();
+            });
 function myFunction() {
     var x = document.getElementById("snackbar")
     x.className = "show";
@@ -778,7 +820,7 @@ $('#submitButton').click(function() {
                 console.log('Popup window is focused');
             });            
         
-/*$(window).blur(function(e) {
+$(window).blur(function(e) {
 
             var id='4';
             var deptVal='mal2';
@@ -798,7 +840,7 @@ $('#submitButton').click(function() {
                 
 
 
-}); */
+}); 
 $(document).ready(function(){
 
   

@@ -24,6 +24,7 @@ if ($result->num_rows > 0) {
 	$_SESSION['myid'] = $row['user_id'];
 	$_SESSION['mycategory'] = $row['category'];
 	$_SESSION['mysubject']=$row['subject'];
+	$_SESSION['myexam']=$row['exam'];
 	$accstat = $row['acc_stat'];
 	if ($accstat == "0") {
 	 header("location:../?rp=5732");	

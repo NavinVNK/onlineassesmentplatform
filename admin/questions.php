@@ -292,7 +292,7 @@ if (isset($_POST["import"])) {
 		<script src="../assets/plugins/offcanvasmenueffects/js/snap.svg-min.js"></script>
 	</head>
 
-	<body <?php if ($ms=="1" ) { print 'onload="myFunction()"'; } ?> class="page-header-fixed">
+ 	<body <?php if ($ms=="1" ) { print 'onload="myFunction()"'; } ?> class="page-header-fixed">
 		<div class="overlay"></div>
 		<div class="menu-wrap">
 			<nav class="profile-menu">

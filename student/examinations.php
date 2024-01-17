@@ -161,8 +161,9 @@ include 'includes/check_reply.php';
                                            <div class="table-responsive">
 										   <?php
 										   include '../database/config.php';
-										   $sql = "SELECT * FROM tbl_examinations WHERE category = '$mycategory' and subject='$mysubject'";
-                                           $result = $conn->query($sql);
+										 //  $sql = "SELECT * FROM tbl_examinations WHERE category = '$mycategory' and subject='$mysubject' ";
+                                         $sql = "SELECT * FROM tbl_examinations WHERE exam_name = '$myexam'  ";
+                                         $result = $conn->query($sql);
 
                                            if ($result->num_rows > 0) {
 										print '

@@ -20,6 +20,8 @@ if ($result->num_rows > 0) {
 	$sdphone = $row['phone'];
 	$sddepartment = $row['department'];
 	$sdcategory = $row['category'];
+    $sdsubject = $row['subject'];
+    $sdexam = $row['exam'];
 	$sdavatar = $row['avatar'];
 	$sdstat = $row['acc_stat'];
 	$qrcodetxt = 'ID:'.$student_id.', NAME: '.$sdfname.' '.$sdlname.', GENDER: '.$sdgender.', DEPARTMENT : '.$sddepartment.', CATEGORY : '.$sdcategory.'';
@@ -278,7 +280,7 @@ if ($result->num_rows > 0) {
                                             </tr>
 											<tr>
                                                 <th scope="row">9</th>
-                                                <td>Department</td>
+                                                <td>Industry</td>
                                                 <td><b><?php echo "$sddepartment"; ?></b></td>
                                                
                                             </tr>
@@ -288,6 +290,19 @@ if ($result->num_rows > 0) {
                                                 <td><b><?php echo "$sdcategory"; ?></b></td>
                                                
                                             </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Skill</td>
+                                                <td><b><?php echo "$sdsubject"; ?></b></td>
+                                               
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">10</th>
+                                                <td>Assesment</td>
+                                                <td><b><?php echo "$sdexam"; ?></b></td>
+                                               
+                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>  
@@ -295,6 +310,89 @@ if ($result->num_rows > 0) {
                             </div>
 							
 							<div class="col-md-7">
+                            <div class="panel panel-white">
+                            <h3><?php echo "$sdfname"; ?> has following assesments eligible to attend</h3>
+                                    <div class="panel-body">
+                                           <div class="table-responsive">
+										   <?php
+										   include '../database/config.php';
+										   $sql = "SELECT * FROM tbl_examinations WHERE category = '$sdcategory' ";
+                                           $result = $conn->query($sql);
+
+                                           if ($result->num_rows > 0) {
+										print '
+										<table id="example" class="display table" style="width: 100%; cellspacing: 0;">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+												<th>Skill</th>
+												<th>Deadline</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                   
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Name</th>
+												<th>Skill</th>
+												<th>Deadline</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                           
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>';
+     
+                                           while($row = $result->fetch_assoc()) {
+                                              if($sdexam===$row['exam_name'])
+                                              {
+                                                $sn='<td style="background-color: #34f8db;">'.$row['exam_name'].'</td>';
+                                              }
+                                              else{
+                                                $sn='<td style="background-color: #ffffcc;">'.$row['exam_name'].'</td>';//<td>'.$row['exam_name'].'</td>
+
+                                              }
+											   $status = $row['status'];
+											   if ($status == "Active") {
+											   $st = '<p class="text-success">ACTIVE</p>';
+											   $stl = '<a class="btn btn-success" href="send_email.php?examid='.$row['exam_id'].'&studid='.$_GET['sid'].' ">Send Email</a>';
+                                               
+											   }else{
+											   $st = '<p class="text-danger">INACTIVE</p>'; 
+                                               $stl = '<a class="btn btn-danger disabled" href="#">Send EMail</a>';											   
+											   }
+                                          print '
+										       <tr>
+                                               '.$sn.' 
+												<td>'.$row['subject'].'</td>
+                                                <td>'.$row['date'].'</td>
+                                                <td>'.$st.'</td>
+												<td>'.$stl.'</td>
+          
+                                            </tr>';
+                                           }
+										   
+										   print '
+									   </tbody>
+                                       </table>  ';
+                                            } else {
+											print '
+												<div class="alert alert-info" role="alert">
+                                        Nothing was found in database.
+                                    </div>';
+    
+                                           }
+                                           $conn->close();
+										   
+										   ?>
+
+
+                 
+
+                                    </div>
+                                    </div>
+                                </div> 
 
                                 <div class="panel panel-white">
                                     <div class="panel-body">
