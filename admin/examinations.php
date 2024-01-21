@@ -300,7 +300,7 @@ include 'includes/check_reply.php';
 															<div class="form-group">
 																<label>Deadline</label>
 																<input type="text" class="form-control date-picker" name="date" required autocomplete="off" placeholder="Select Deadline"> </div>
-																<div class="form-group">
+										<div class="form-group">
                                             <label for="exampleInputEmail1">Select Industry</label>
                                             <select id="dept"class="form-control" name="department" required>
 											<option value="" selected disabled>-Select Industry-</option>
@@ -395,7 +395,7 @@ include 'includes/check_reply.php';
 				<script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 				<script src="../assets/js/pages/form-elements.js"></script>
 
-				<script>
+		<script>
         $(document).ready(function() {
             // Attach the change event using jQuery
 			$("#dept").change(function() {

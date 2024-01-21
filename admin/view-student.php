@@ -313,7 +313,7 @@ if ($result->num_rows > 0) {
                                            <div class="table-responsive">
 										   <?php
 										   include '../database/config.php';
-										   $sql = "SELECT * FROM tbl_examinations WHERE category = '$sdcategory' ";
+										   $sql = "SELECT * FROM tbl_examinations WHERE department='$sddepartment' and category = '$sdcategory' and subject='$sdsubject' ";
                                            $result = $conn->query($sql);
 
                                            if ($result->num_rows > 0) {

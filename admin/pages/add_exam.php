@@ -12,6 +12,7 @@ $ques_hard = mysqli_real_escape_string($conn, $_POST['ques_hard']);
 $passmark = mysqli_real_escape_string($conn, $_POST['passmark']);
 $attempts = mysqli_real_escape_string($conn, $_POST['attempts']);
 $date = mysqli_real_escape_string($conn, $_POST['date']);
+$department = mysqli_real_escape_string($conn, $_POST['deptartment']);
 $subject = mysqli_real_escape_string($conn, $_POST['subject']);
 $category = mysqli_real_escape_string($conn, $_POST['category']);
 $terms = ucfirst(mysqli_real_escape_string($conn, $_POST['instructions']));
@@ -26,8 +27,8 @@ header("location:../examinations.php?rp=1185");
     }
 } else {
 
-$sql = "INSERT INTO tbl_examinations (exam_id, category, subject, exam_name, date, duration,tot_ques,ques_easy,ques_medium,ques_hard,passmark, re_exam, terms)
-VALUES ('$exam_id', '$category', '$subject', '$exam', '$date','$duration','$tot_ques','$ques_easy','$ques_medium','$ques_hard', '$passmark', '$attempts', '$terms')";
+$sql = "INSERT INTO tbl_examinations (exam_id, department,category, subject, exam_name, date, duration,tot_ques,ques_easy,ques_medium,ques_hard,passmark, re_exam, terms)
+VALUES ('$exam_id', '$department','$category', '$subject', '$exam', '$date','$duration','$tot_ques','$ques_easy','$ques_medium','$ques_hard', '$passmark', '$attempts', '$terms')";
 
 if ($conn->query($sql) === TRUE) {
 header("location:../examinations.php?rp=2932");

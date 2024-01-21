@@ -270,7 +270,7 @@ if ($result->num_rows > 0) {
 											<option value="" selected disabled>-Select category-</option>
 											<?php
 											include '../database/config.php';
-											$sql = "SELECT * FROM tbl_categories WHERE status = 'Active' ORDER BY name";
+											$sql = "SELECT * FROM tbl_categories WHERE department='$sddepartment' and status = 'Active' ORDER BY name";
                                             $result = $conn->query($sql);
 
                                             if ($result->num_rows > 0) {
@@ -296,7 +296,7 @@ if ($result->num_rows > 0) {
 											<option value="" selected disabled>-Select Subject-</option>
 											<?php
 											include '../database/config.php';
-											$sql = "SELECT * FROM tbl_subjects WHERE status = 'Active' ORDER BY name";
+                                            $sql = "SELECT * FROM tbl_subjects WHERE department='$sddepartment' and category='$sdcategory' and status = 'Active' ORDER BY name";
                                             $result = $conn->query($sql);
 
                                             if ($result->num_rows > 0) {
@@ -316,6 +316,29 @@ if ($result->num_rows > 0) {
 											
 											</select>
                                         </div>
+                                        <div id="examlist"class="form-group" >
+									        <h3>List of Examinations set</h3>
+                                               <ul style='list-style-type:decimal;'>
+									        <?php
+											include '../database/config.php';
+											  $sql = "SELECT * FROM tbl_examinations  WHERE department='$sddepartment' and category='$sdcategory' and subject='$sdsubject' and  status='Active'ORDER BY exam_name";
+
+                                            $result = $conn->query($sql);
+
+                                            if ($result->num_rows > 0) {
+    
+                                            while($row = $result->fetch_assoc()) {
+                                                print '<li>'.$row['exam_name'].'</li>';
+
+                                            }
+                                               print "</ul>";
+                                           } else {
+                                            echo " <p >No examinations set </p>";
+                          
+                                            }
+                                             $conn->close();
+											 ?>
+										</div>
 										
 									<div class="form-group">
                                     <label >Date of Birth <?php echo $sdsubject?></label>
@@ -377,7 +400,48 @@ if ($result->num_rows > 0) {
         <script src="../assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
         <script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
         <script src="../assets/js/pages/form-elements.js"></script>
-		
+        <script>
+        $(document).ready(function() {
+            // Attach the change event using jQuery
+			$("#dept").change(function() {
+                getSubcategories('1');
+            });
+            $("#category").change(function() {
+                getSubcategories('2');
+            });
+            $("#subject").change(function() {
+                getSubcategories('3');
+            });
+        });
+
+        function getSubcategories(id) {
+            // Get the selected category value
+            // Get the selected category value
+            if(id=='1')
+			var deptVal = $("#dept").val();
+            else if(id=='2')
+            var deptVal = $("#category").val();
+			else
+            var deptVal = $("#subject").val();
+
+
+            // Use AJAX to fetch subcategories based on the selected category
+            $.ajax({
+                type: "GET",
+                url: "selectajax.php",
+                data: { select_value: deptVal,id:id },
+                success: function(response) {
+                   // Update the subcategory select element with the new options
+					if(id=='1')
+					$("#category").html(response);
+					else if(id=='2')
+                    $("#subject").html(response);
+					else
+					$("#examlist").html(response);
+                }
+            });
+        }
+    </script>		
 
 		<script>
 function myFunction() {

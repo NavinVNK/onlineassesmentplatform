@@ -12,6 +12,7 @@ $ques_hard = mysqli_real_escape_string($conn, $_POST['ques_hard']);
 $passmark = mysqli_real_escape_string($conn, $_POST['passmark']);
 $attempts = mysqli_real_escape_string($conn, $_POST['attempts']);
 $date = mysqli_real_escape_string($conn, $_POST['date']);
+$department = mysqli_real_escape_string($conn, $_POST['department']);
 $subject = mysqli_real_escape_string($conn, $_POST['subject']);
 $category = mysqli_real_escape_string($conn, $_POST['category']);
 $terms = ucfirst(mysqli_real_escape_string($conn, $_POST['instructions']));
@@ -26,7 +27,7 @@ header("location:../examinations.php?rp=1185");
     }
 } else {
 
-$sql = "UPDATE tbl_examinations SET category = '$category', subject = '$subject', exam_name = '$exam', date = '$date', duration = '$duration',tot_ques='$tot_ques',ques_easy='$ques_easy',ques_medium='$ques_medium',ques_hard='$ques_hard', passmark = '$passmark', re_exam = '$attempts', terms = '$terms' WHERE exam_id='$exam_id'";
+$sql = "UPDATE tbl_examinations SET department='$department',category = '$category', subject = '$subject', exam_name = '$exam', date = '$date', duration = '$duration',tot_ques='$tot_ques',ques_easy='$ques_easy',ques_medium='$ques_medium',ques_hard='$ques_hard', passmark = '$passmark', re_exam = '$attempts', terms = '$terms' WHERE exam_id='$exam_id'";
 
 if ($conn->query($sql) === TRUE) {
 header("location:../edit-exam.php?rp=7823&eid=$exam_id");

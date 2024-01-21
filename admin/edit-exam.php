@@ -10,6 +10,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
+     $exdept = $row['department'];
      $excate = $row['category'];
 	 $exsubject = $row['subject'];
 	 $exname = $row['exam_name'];
@@ -243,14 +244,40 @@ $conn->close();
                                     <label >Deadline</label>
                                     <input type="text" class="form-control date-picker" value="<?php echo"$exdate"; ?>" name="date" required autocomplete="off" placeholder="Select deadline">
                                     </div>
+                                    <div class="form-group">
+                                            <label for="exampleInputEmail1">Select Department</label>
+                                            <select id="dept" class="form-control" name="department" required>
+											<option value="" selected disabled>-Select department-</option>
+											<?php
+											include '../database/config.php';
+											$sql = "SELECT * FROM tbl_departments WHERE status = 'Active' ORDER BY name";
+                                            $result = $conn->query($sql);
+
+                                            if ($result->num_rows > 0) {
+    
+                                            while($row = $result->fetch_assoc()) {
+                                          	if ($exdept == $row['name']) {
+											print '<option selected value="'.$row['name'].'">'.$row['name'].'</option>';	
+											}else{
+											print '<option value="'.$row['name'].'">'.$row['name'].'</option>';	
+											}
+                                            }
+                                           } else {
+                          
+                                            }
+                                             $conn->close();
+											 ?>
+											
+											</select>
+                                        </div>
 									
 										<div class="form-group">
                                             <label for="exampleInputEmail1">Select Category</label>
-                                            <select class="form-control" name="category" required>
-											<option value="" selected disabled>-Select category-</option>
+                                            <select id="category" class="form-control" name="category" required>
+                                            <option value="" selected disabled>-Select Domain-</option>
 											<?php
 											include '../database/config.php';
-											$sql = "SELECT * FROM tbl_categories WHERE status = 'Active' ORDER BY name";
+											$sql = "SELECT * FROM tbl_categories WHERE department='$exdept'and status = 'Active' ORDER BY name";
                                             $result = $conn->query($sql);
 
                                             if ($result->num_rows > 0) {
@@ -268,15 +295,16 @@ $conn->close();
                                              $conn->close();
 											 ?>
 											
+                                          
 											</select>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Select Subject</label>
-                                            <select class="form-control" name="subject" required>
-											<option value="" selected disabled>-Select subject</option>
+                                            <select id="subject" class="form-control" name="subject" required>
+                                            <option value="" selected disabled>-Select Skill</option>
 											<?php
 											include '../database/config.php';
-											$sql = "SELECT * FROM tbl_subjects WHERE status = 'Active' ORDER BY name";
+											$sql = "SELECT * FROM tbl_subjects WHERE department='$exdept' and category='$excate' and status = 'Active' ORDER BY name";
                                             $result = $conn->query($sql);
 
                                             if ($result->num_rows > 0) {
@@ -297,6 +325,29 @@ $conn->close();
 											
 											</select>
                                         </div>
+                                        <div id="examlist"class="form-group" >
+									        <h3>List of Examinations set</h3>
+                                               <ul style='list-style-type:decimal;'>
+									        <?php
+											include '../database/config.php';
+											  $sql = "SELECT * FROM tbl_examinations  WHERE department='$exdept' and category='$excate' and subject='$exsubject' and  status='Active'ORDER BY exam_name";
+
+                                            $result = $conn->query($sql);
+
+                                            if ($result->num_rows > 0) {
+    
+                                            while($row = $result->fetch_assoc()) {
+                                                print '<li>'.$row['exam_name'].'</li>';
+
+                                            }
+                                               print "</ul>";
+                                           } else {
+                                            echo " <p >No examinations set </p>";
+                          
+                                            }
+                                             $conn->close();
+											 ?>
+										</div>
 									
 									
 									<div class="form-group">
@@ -356,7 +407,48 @@ $conn->close();
         <script src="../assets/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
         <script src="../assets/js/pages/form-elements.js"></script>
 		
+        <script>
+       $(document).ready(function() {
+            // Attach the change event using jQuery
+			$("#dept").change(function() {
+                var selcat= <?php echo json_encode($excate, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+                getSubcategories('1');
+            });
+            $("#category").change(function() {
+                var selsub= <?php echo json_encode($exsubject, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE); ?>;
+                getSubcategories('2');
+            });
+			$("#subject").change(function() {
+                getSubcategories('3');
+            });
+        });
 
+        function getSubcategories(id,selval) {
+            // Get the selected category value
+			if(id=='1')
+			var deptVal = $("#dept").val();
+            else if(id=='2')
+            var deptVal = $("#category").val();
+			else
+            var deptVal = $("#subject").val();
+
+            // Use AJAX to fetch subcategories based on the selected category
+            $.ajax({
+                type: "GET",
+                url: "selectajax.php",
+                data: { select_value: deptVal,id:id },
+                success: function(response) {
+                    // Update the subcategory select element with the new options
+					if(id=='1')
+					$("#category").html(response);
+					else if(id=='2')
+                    $("#subject").html(response);
+					else
+					$("#examlist").html(response);
+                }
+            });
+        }
+    </script>      
 		<script>
 
 $(document).ready(function(){

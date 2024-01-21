@@ -64,44 +64,7 @@ $sql4 = "UPDATE tbl_assessment_records SET score='0', status='MAL2' WHERE record
                                             
 
                                         }
-                                       else  if($queryId=='5'){                                       
-                                            $result = $conn->query($sql2);
-
-                                            if ($result->num_rows > 0) {
-                                               
-    
-                                            while($row = $result->fetch_assoc()) {
-                                                if ($selected == $row['name']) {
-                                                    $options .=   "<option selected value='" . $row['name'] . "'>" . $row['name'] . "</option>";
-                                                    }else{
-                                                $options .= "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
-                                                    }
-                                            }
-                                           } else {
-                          
-                                            }
-                                            echo $options;
-
-                                        }
-                                        else  if($queryId=='6'){                                       
-                                            $result = $conn->query($sql3);
-
-                                            if ($result->num_rows > 0) {
-                                               
-    
-                                            while($row = $result->fetch_assoc()) {
-                                                if ($selected == $row['name']) {
-                                                    print '<option selected value="'.$row['name'].'">'.$row['name'].'</option>';	
-                                                    }else{
-                                                $options .= "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
-                                                    }
-                                            }
-                                           } else {
-                          
-                                            }
-                                            echo $options;
-
-                                        }
+                                       
                                         else{
 
                                            //if ($conn->query($sql4) === TRUE) {
